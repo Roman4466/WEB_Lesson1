@@ -1,22 +1,52 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
-    <title>Повна версія картки викладача</title>
+    <title>Full Card</title>
+    <script>
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const fullName = getQueryParameter('fullName');
+            const gender = getQueryParameter('gender');
+            const birthDate = getQueryParameter('birthDate');
+            const email = getQueryParameter('email');
+            const phone = getQueryParameter('phone');
+            const bgColor = getQueryParameter('bgColor');
+            const country = getQueryParameter('country');
+            const city = getQueryParameter('city');
+            const comment = getQueryParameter('comment');
+
+            if (fullName) document.getElementById('professorName').textContent = fullName;
+            if (gender) document.getElementById('professorGender').textContent = gender;
+            if (birthDate) document.getElementById('professorAge').textContent = new Date().getFullYear() - new Date(birthDate).getFullYear();
+            if (email) document.getElementById('professorEmail').textContent = email;
+            if (phone) document.getElementById('professorPhone').textContent = phone;
+            if (country) document.getElementById('professorCountry').textContent = country;
+            if (city) document.getElementById('professorCity').textContent = city;
+            if (comment) document.getElementById('professorComment').textContent = comment;
+
+            document.querySelector('.full-card').style.backgroundColor = bgColor || '#ffffff';
+        });
+    </script>
 </head>
+
 <body>
     <article class="full-card" data-bg-color="#ffffff">
-        <h2>Ім’я викладача</h2>
-        <p><strong>Стать:</strong> Чоловік/Жінка</p>
-        <p><strong>Вік:</strong> 35</p>
-        <p><strong>Email:</strong> example@example.com</p>
-        <p><strong>Телефон:</strong> +123456789</p>
-        <p><strong>Країна:</strong> Україна</p>
-        <p><strong>Місто:</strong> Київ</p>
-        <p><strong>Коментар:</strong> Коментар до профілю.</p>
-        <div class="map">
-            <p>Тут буде карта.</p>
-        </div>
+        <h2 id="professorName">Name</h2>
+        <p><strong>Gender:</strong> <span id="professorGender">Male</span></p>
+        <p><strong>Age:</strong> <span id="professorAge">35</span></p>
+        <p><strong>Email:</strong> <span id="professorEmail">example@example.com</span></p>
+        <p><strong>Phone number:</strong> <span id="professorPhone">+123456789</span></p>
+        <p><strong>Country:</strong> <span id="professorCountry">Ukraine</span></p>
+        <p><strong>City:</strong> <span id="professorCity">Kyiv</span></p>
+        <p><strong>Comment:</strong> <span id="professorComment">Comment.</span></p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7788796.564375391!2d8.080375799999999!3d17.59687785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1199ec7ac6a1af5d%3A0xc933920a158e24d4!2sNiger!5e0!3m2!1sen!2sua!4v1715586248171!5m2!1sen!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </article>
 </body>
+
 </html>

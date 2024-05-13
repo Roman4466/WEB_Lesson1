@@ -1,13 +1,39 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Compact card</title>
+    <title>Compact Card</title>
+    <script>
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const fullName = getQueryParameter('fullName');
+            const gender = getQueryParameter('gender');
+            const birthDate = getQueryParameter('birthDate');
+            const email = getQueryParameter('email');
+            const phone = getQueryParameter('phone');
+            const bgColor = getQueryParameter('bgColor');
+            const country = getQueryParameter('country');
+            const city = getQueryParameter('city');
+            const comment = getQueryParameter('comment');
+
+            if (fullName) {
+                document.getElementById('professorName').textContent = fullName;
+            }
+
+            const detailedLink = document.getElementById('detailedLink');
+            detailedLink.href = `task3.html?fullName=${encodeURIComponent(fullName)}&gender=${encodeURIComponent(gender)}&birthDate=${encodeURIComponent(birthDate)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&bgColor=${encodeURIComponent(bgColor)}&country=${encodeURIComponent(country)}&city=${encodeURIComponent(city)}&comment=${encodeURIComponent(comment)}`;
+        });
+    </script>
 </head>
 <body>
     <div class="compact-card">
-        <img src="placeholder.jpg" alt="Фото викладача" width="100">
-        <p>Name</p>
-        <a href="#">Detailed</a>
+        <img src="placeholder.jpg" alt="Photo" width="500">
+        <p>Name: <span id="professorName">Some name</span></p>
+        <a id="detailedLink" href="#">Detailed</a>
     </div>
 </body>
 </html>
