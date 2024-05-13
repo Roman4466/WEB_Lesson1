@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full Card</title>
     <script>
         function getQueryParameter(name) {
@@ -30,23 +31,39 @@
             if (city) document.getElementById('professorCity').textContent = city;
             if (comment) document.getElementById('professorComment').textContent = comment;
 
-            document.querySelector('.full-card').style.backgroundColor = bgColor || '#ffffff';
+            document.querySelector('.task3').style.backgroundColor = bgColor || '#ffffff';
         });
     </script>
 </head>
 
 <body>
-    <article class="full-card" data-bg-color="#ffffff">
-        <h2 id="professorName">Name</h2>
-        <p><strong>Gender:</strong> <span id="professorGender">Male</span></p>
-        <p><strong>Age:</strong> <span id="professorAge">35</span></p>
-        <p><strong>Email:</strong> <span id="professorEmail">example@example.com</span></p>
-        <p><strong>Phone number:</strong> <span id="professorPhone">+123456789</span></p>
-        <p><strong>Country:</strong> <span id="professorCountry">Ukraine</span></p>
-        <p><strong>City:</strong> <span id="professorCity">Kyiv</span></p>
-        <p><strong>Comment:</strong> <span id="professorComment">Comment.</span></p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7788796.564375391!2d8.080375799999999!3d17.59687785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1199ec7ac6a1af5d%3A0xc933920a158e24d4!2sNiger!5e0!3m2!1sen!2sua!4v1715586248171!5m2!1sen!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </article>
+    <header>
+        <h1>Professor Details</h1>
+    </header>
+    <main>
+        <article class="task3" data-bg-color="#ffffff">
+            <header>
+                <h2 id="professorName">Name</h2>
+            </header>
+            <section>
+                <p>Gender: <span id="professorGender">Male/Female/Apache</span></p>
+                <p>Age: <span id="professorAge">35</span></p>
+                <p>Email: <span id="professorEmail">example@example.com</span></p>
+                <p>Phone number: <span id="professorPhone">+123456789</span></p>
+                <p>Country: <span id="professorCountry">Ukraine</span></p>
+                <p>City: <span id="professorCity">Kyiv</span></p>
+                <p>Comment: <span id="professorComment">Comment.</span></p>
+            </section>
+            <h3>Location Map</h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7788796.564375391!2d8.080375799999999!3d17.59687785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1199ec7ac6a1af5d%3A0xc933920a158e24d4!2sNiger!5e0!3m2!1sen!2sua!4v1715586248171!5m2!1sen!2sua"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mohylanka</p>
+    </footer>
 </body>
 
 </html>
